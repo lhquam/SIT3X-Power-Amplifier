@@ -1,0 +1,44 @@
+SIT3X Build Guide
+LHQuam  Mon Sep 14 2020
+
+Organization of the files in the zip file:
+
+
+SIT3X-Build-Guide
+
+SIT3X-Build-Guide/prototype
+      chassis-wiring.jpg  (Power supply and chassis wiring)
+      heatsink-layout.jpg
+      PS-panel-1.jpg
+      back-panel.jpg
+      bottom.jpg
+      
+SIT3X-Build-Guide/prototype/images
+      <a collection of images of my SIT3X prototype>
+      
+SIT3X-Build-Guide/power-supply
+      single transformer 2-secondaries
+          PS-caps2-20200818-1.pcb.jpg
+          PS-2CH-20200830.BOM
+          SIT3X-single-transformer-chassis-wiring-1NTC-20200902-2.asc.jpg
+          SIT3X-single-transformer-chassis-wiring-2NTC-20200912-1.asc.jpg
+
+      dual transformers 4-secondaries
+          PS-caps1-20200818-1.pcb.jpg 
+          PS-1CH-20200830.BOM
+	  SIT3X-dual-transformer-chassis-wiring-20200830.asc.jpg
+
+
+SIT3X-Build-Guide/OS
+      SIT3X-OS-20200912-1-XXX-edit.asc.jpg
+      OS-left-top.jpg
+      OS-right-top.jpg
+      SIT3X-OS-20200912.BOM
+      SIT3X-order2-OS_Sep13_1023AM.xls
+      
+SIT3X-Build-Guide/FCFE
+      SIT3X-FCFE-20200912-1-XXX-edit.asc.jpg
+      FCFE-top.jpg
+      SIT3X-FCFE-1b.BOM
+      SIT3X-order2-FCFE_Sep13_1237PM.xls
+      
