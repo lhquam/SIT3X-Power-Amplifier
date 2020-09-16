@@ -1,0 +1,17 @@
+The SIT3X prototype uses Heatsink USA 10.8" x 7" heatsinks mounted fin-to-fin.
+
+13 x holes must be drilled and tapped for #6-32 screw threads (or M3.5x0.6)
+
+   FCFE PCB:  4 x holes
+   OS PCB:    4 x holes
+   M71 (IRFP240 cap multiplier FET): 1 x hole
+   M1 (IXYS PFET): 2 x holes
+   J1 (2SK182ES SIT): 2 x holes
+
+Images SIT3X-Build-Guide/chassis-prototype/SIT3X-HSUSA-left-drill-holes-1.pcb.jpg and SIT3X-Build-Guide/chassis-prototype/SIT3X-HSUSA-right-1.pcb.jpg show the drill hole locations.  These images can be printed such that their height is 7" and used as a template for marking the drill holes on the heatsinks using a center-punch.     
+
+The OS and FCFE PCBs are attached to the heatsinks using #6 screws (or M3.5x0.6) and 0.475" nylon (or metal) standoffs (Mouser part# 749-912-475).  The standoff length is important to match the height of the IXYS SOT-227 package.    
+
+The image SIT3X-Build-Guide/OS/M71-lead-bending.jpg shows how the leads of M71 (the cap multiplier FET) are bend before attachment to the PCB AFTER the PCB has been first mounted to the heatsink.  See SIT3X-Build-Guide/OS/OS-build.txt.
+
+

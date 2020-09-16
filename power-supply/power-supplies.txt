@@ -1,0 +1,8 @@
+Sat Sep 12 2020
+
+There are a number of alternative power supplies for the SIT3X, the choice primarily depends on heatsink capabilities of the chassis to be used.
+
+For the prototype SIT3X I wanted the capability to experiment with output stage bias currents of 2A or possibly higher and used a 35V 1000VA Antek AN-10435 transformer with 2X 35V secondaries, resulting in rectified voltages of around +/- 45V.   Using this transformer requires that the heatsink must be able to dissipate 2*45V*2A = 180W per channel with about 25C-30C maximum temperature rise above ambient.
+
+
+
