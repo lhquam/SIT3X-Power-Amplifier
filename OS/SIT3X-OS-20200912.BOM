@@ -1,0 +1,100 @@
+SIT3X OS V1.0  20200817 BOM
+
+. Left and right PCB versions use the same BOM
+
+. There are a number of options included in this BOM:
+  ..  save $$ using trimmers vs. dial pots vs. trimmers for P6
+  .. use top-slot, side-slot, multi-turn trimmers for P4 and P5
+  .. experiment with different C5 output caps
+
+c3     220uF    667-ECE-A1EN221U 25V bi-polar electrolytic
+c4     220uF    667-ECE-A1EN221U 25V bi-polar electrolytic
+
+c5 --- polar alternatives
+c5     30mF     3x647-UKA1C103MHD 10mF 16V polar LS=7.5mm D=18mm H=35.5mm audio grade -- looks good - probably the best option
+c5     20mF     2x647-LKG1C103MESZBK 10mF 16V polar  LS=10mm D=22mm H=40mm audio grade -- looks good
+c5     20mF     2X647-UFW1E103MRD 10mF 25V polar LS=10mm D=20mm H=40mm audio grade
+c5     20mF     2X647-UFW1V103MRD 10mF 35V polar LS=10mm D=22mm H=50mm
+
+c5 --- bipolar alternatives
+c5     14mF   3x667-ECE-A1AN472U 4.7mF 10V non-polar LS=7.5mm D=18mm H=35.5mm
+
+c6     10uf     505-MKS410/50/10 (WIMA MKS4B051004J00KSSD) 10uF 50V PET film cap
+
+c7     220uF    667-ECE-A1EN221U 25V bi-polar electrolytic  
+ 
+d1     1N4744A    15V 1.3W zener 78-1N4744A-TAP
+           OLD    d2     1N5239     9.1V 1/2W zener 512-1N5239BTR
+d2     1n4739A  9.1V 1.3A zener  78-1N4739A-TAP
+d4     1N5239     9.1V 1/2W zener 512-1N5239BTR
+d5     1N5932B    20V 3W zener   863-1N5932BRLG
+
+r11    430        430R 1W metal film resistor 594-5073NW430R0J 
+r11b   not used   wire between pads
+r12    10000      10k 1/4W 603-MFR-25FBF52-10K
+r13    10000      10k 1/4W 603-MFR-25FBF52-10K
+r16    22000      22k 1/2W  603-MFR50SFTE52-22K  (value interacts with CTR of optocoupler)
+r17    22r        22R 1/4W 660-MF1/4CC22R1F
+r18    47r        47R 1/4W 603-MFR-25FBF52-47R
+r20    100        100R 1/4W 603-MFR-25FTE52-100R
+r22    0.0975     4x0R39 3W  667-ERX-3SJR39V
+r23    100000     100k 1/4W 603-FMF-25FTF52100K
+r24    4750       4.75K 1/4W 603-MFR-25FTE52-4K75
+r25    7500       7.5k 1/2W 603-MFR50SFTE52-7K5
+r26    33000      33k 1/4W 603-MFR-25FTE52-33K
+
+Pots - can be either side-slot or top-slot pots.
+P4     5K  Bourns top-slot trimmer 652-3386Y-1-502LF  (pins 1&3 reversed vs. 3386P)
+P5     20K Bourns top-slot trimmer 652-3386Y-1-203LF  (pins 1&3 reversed vs. 3386P)
+
+P6 ALTERNATIVES:
+P6 multi-turn pot on back panel or front panel  -- used on SIT3X prototype
+      Bourns 652-3549S-1AA-101A 100R 10 turn multi-turn pot
+      Bourns 652-H-22-6A 1/4" shaft 0-15 turn dial         
+      3-pin 0.1" spacing breakaway header on OS board
+
+      Wiring from PS board to multi-turn pot:
+      798-DF1B-3S-2.5   3-pin 0.1" spacing single row recp. housing 
+      3X 798-DF1B-2428SCA crimp female contacts for recp. housing
+      24AWG twisted triple wiring from recp. to multi-turn pot
+      
+
+P6     100R Bourns top-slot trimmer 652-3386P-1-101  best bet for proper rotation direction
+       100R Bourns side-slot trimmer 652-3386X-1-101 different rotation directions
+       100R Bourns side-slot trimmer 652-3386H-1-101
+
+<unlabelled> TL431 595-TL431ACLPRE3  TO-92 package
+<unlabelled> 859-LTV-817B 1-channel 4-pin DIP  - (CTR interacts with R16)
+<labelled as 100uF> 100uF 63V electrolytic 667-EEU-EB1J101B
+<labelled as 1k>   1k 1/4W metal film resistor  603-MFR-25FBF52-1K 
+
+M1     IXTN40P50P IXYS PFET 747-IXTN40P50P 
+       thermal paste under IXTN40P50P
+       
+J1     2SK182ES  
+       mica sheet+goop or silpad under 2SK182ES
+
+       517-2314-6121TG 14 pin breakaway header
+       2 x 571-796740-2 2-pin 6.36mm spacing terminal block
+       1 x 571-796740-3 3-pin 6.36mm spacing terminal block
+       
+       4 x 0.475" nylon standoffs 749-912-475
+
+Cable from OS board to FCFE board
+       2X  2x7 0.1" ribbon cable receptacle (1 at each end of cable) 649-71600-014LF
+       517-3365/14FT 14 cond. 28AWG ribbon cable
+
+Capacitor Multiplier BOM
+
+c71    220uF    v=63 220uF 667-ECA-1JM221 
+c72    220uf    v=63 220uF 667-ECA-1JM221
+d71    1n4739A  9.1V 1.3A zener  78-1N4739A-TAP
+d72    1n4148  diode
+
+alternative CM FETs
+m71    IRFP240  NFET
+m71    IRFP260  NFET
+mica+goop or silpad under FET
+
+r71    10k  10k 1/4W    603-MFR-25FBF52-10K   
+r72    470  470R 1/4W   603-MFR-25FTE52-470R    

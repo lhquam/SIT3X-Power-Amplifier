@@ -1,0 +1,43 @@
+SIT3X Dual Channel Power Supply BOM
+
+power entry module -- your choice
+
+3.3nF 250V safety capacitor 667-ECQ-U2A332KL or equiv.  across transformer primaries
+
+inrush current limiter 527-CL60 (? TBD)  - in series with transformer primary 
+     Should this be shared between channels or one per channel?
+
+1 x 512-GBPC3506 35A 600V bridge rectifier  - mounted to chassis floor
+    diodes wired back-to-back between analog grounds and chassis ground.
+    See chassis wiring schematic.
+
+Antek AN-6432  - 600VA 32V Transformer 2 secondaries
+With more heatsink capacity this transformer is appropriate:
+Antek AN-8434  - 800VA 34V Transformer 2 secondaries
+
+1 x 512-GBPC3506 35A 600V bridge rectifier  - mounted to chassis floor
+    is this a big enough rectifier?
+
+
+16 x 10mF 50V LS=10mm D=30mm electrolytic capacitors -- I used 647-LLS1H103MELB in prototype
+
+8 x 667-ERX-3SJR47 0R47 3W resistors
+
+2 x 283-2.2K-RC  2.2k 3W metal oxide 
+or
+2 x 652-WS5M1001J 1k 5W wirewound 
+
+Multiple Choices For Connectors:
+
+no connectors -- solder directly to PCB  -- pads will accept up to 16ga. wire
+
+or  up to 5X 571-796740-2  TE-connectivity 2-pin .25in spacing terminal blocks
+    up to 1X 571-796740-3  TE-connectivity 3-pin .25in spacing terminal blocks
+    
+or  up to 5X 571-214376674 TE-connectivity 2-position 8.26mm spacing barrier terminal blocks    
+    up to 1X 571-214376675 TE-connectivity 3-position 8.26mm spacing barrier terminal blocks
+    
+or  up to 13X 571-1742188-1 TE-connectivity FASTON quick disconnect terminals
+
+4X #6 standoffs for PCB
+

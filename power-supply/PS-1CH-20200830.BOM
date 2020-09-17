@@ -1,0 +1,44 @@
+Power supply components shared between channels:
+
+power entry module -- your choice
+
+3.3nF 250V safety capacitor 667-ECQ-U2A332KL or equiv.  across transformer primaries
+
+inrush current limiter 527-CL60 (? TBD)  - in series with transformer primary 
+     Should this be shared between channels or one per channel?
+
+1 x 512-GBPC3506 35A 600V bridge rectifier  - mounted to chassis floor
+    diodes wired back-to-back between analog grounds and chassis ground.
+    See chassis wiring schematic.
+
+SIT3X Single Channel Power Supply BOM
+
+Transformer choice based primarily on heatsink capacity:
+
+diyAudio Store 5U 400mm chassis appears to have 120 Watts per side max dissipation for 25C rise
+  and 300VA transformer per channel is enough.
+Antek AN-3232 - 300VA 32V Transformer
+
+With more heatsink capacity these transformers are appropriate:
+Antek AN-4232 - 400VA 32V Transformer
+Antek AN-4234 - 400VA 34V Transformer
+
+
+1 x 512-GBPC3506 35A 600V bridge rectifier  - mounted to chassis floor
+
+parts on single channel caps PCB
+
+8 x 10mF 50V LS=10mm D=30mm electrolytic capacitors -- I used 647-LLS1H103MELB in prototype
+
+4 x 667-ERX-3SJR47 0R47 3W resistors
+
+2 x 283-2.2K-RC  2K2 3W resistors
+
+Multiple Choices For Connectors:
+
+    solder directly to PCB  -- pads will accept up to 16ga. wire
+or  up to 6X 571-796740-2  TE-connectivity 2-pin .25in spacing terminal blocks  
+or  up to 6X 571-214376674 TE-connectivity 2-position 8.26mm spacing barrier terminal blocks    
+
+4X #6 standoffs for PCB
+
