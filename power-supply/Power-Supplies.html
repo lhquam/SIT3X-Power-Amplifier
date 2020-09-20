@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Power-Supplies</title>
+  </head>
+  <body>
+    <h1 align="left">Power Supplies</h1>
+    <p><br>
+      Two types of power supplies configurations for a stereo amplifier
+      are discussed here, using two types of CRC filter PCBs.<br>
+    </p>
+    <ul>
+      <li>Independent PS per channel:&nbsp; Two transformers with two
+        secondaries each or a single transformer with four secondaries.<br>
+      </li>
+      <li>Shared PS with independent 2nd stage of CRC filter:&nbsp;
+        Single transformer with two secondaries, bridge rectifier, 1st
+        stage of CRC, followed by independent second stages of CRC.<br>
+      </li>
+    </ul>
+    <h2>Independent PS per channel:<br>
+    </h2>
+    <p><img
+        src="SIT3X-dual-transformer-chassis-wiring-20200830-crop.asc.jpg"
+        alt="" width="1200" height="673"><br>
+    </p>
+    <h3>Bill of Materials (per channel):&nbsp;&nbsp;&nbsp; <font
+        size="+1"><a
+href="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/power-supply/PS-1CH-20200830.BOM">single-channel-PS-BOM</a></font></h3>
+    <h3>Single Channel Capacitor Board:<br>
+    </h3>
+    The single channel capacitor board was fabricated with some artwork
+    errors with the CRC resistor solder pads, requiring rework to cut
+    away some solder pads on one side of the board or the other.&nbsp;
+    No functionality to the board was lost.&nbsp; Due to this
+    modification, some resistor leads must be soldered on the top side
+    of the board rather than the bottom. <br>
+    <br>
+    <table width="1632" height="433" align="center" cellspacing="2"
+      cellpadding="5" border="1">
+      <tbody>
+        <tr>
+          <td valign="top"><img
+src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/power-supply/PS-caps1-20200818-1-top-mod.pcb.jpg"
+              alt="PS-caps1-20200818-1-top-mod" width="800" height="426"><br>
+          </td>
+          <td valign="top"><img
+src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/power-supply/PS-caps1-20200818-1-bot-mod.pcb.jpg"
+              alt="PS-caps1-20200818-1-bot-mod" width="800" height="419"></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p><br>
+    </p>
+    <h2>Shared PS with independent 2nd stage of CRC filter: <br>
+    </h2>
+    <img
+src="SIT3X-single-transformer-chassis-wiring-1NTC-20200902-2-crop.asc.jpg"
+      alt="" width="1375" height="750"><br>
+    <br>
+    <h3>Bill of Materials:&nbsp;&nbsp;&nbsp; <font size="+1"><a
+          href="PS-2CH-20200830.BOM">dual-channel-PS-BOM</a></font></h3>
+    <h3>Dual Channel Capacitor Board:</h3>
+    <p><img
+src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/power-supply/PS-caps2-20200818-1.pcb.jpg"
+        alt="" width="674" height="570"><br>
+    </p>
+    <p><br>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>SIT3X Power Amplifier</title>
+  </head>
+  <body>
+    <h1 align="center">SIT3X Power Amplifier</h1>
+    <br>
+    The SIT3X power amplifier is a common drain (aka. source-follower)
+    amplifier whose output stage (OS) consists of a Tokin 2SK182ES SIT
+    and an IXYS IXTN40P50P PFET.&nbsp; The SIT3X OS design was inspired
+    by the Nelson Pass FirstWatt SIT-3 amplifier and a variety of other
+    designs by Nelson Pass.&nbsp; The design is discussed in the
+    diyAudio Pass-Labs forum thread "The SIT3X Amplifier"&nbsp;
+    https://www.diyaudio.com/forums/pass-labs/353999-sit-3x-amplifier.html<br>
+    <h1><a href="prototype/prototype.html">SIT3X Prototype:</a></h1>
+    <img
+src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/prototype/images/DSC_0646-w1000.JPG"
+      alt="" width="1000" height="664">
+    <h1>Design History:<br>
+    </h1>
+    <h2>Output Stage:</h2>
+    <p>The SIT3X evolved from a discovery made during LTSpice
+      simulations of variants of the FirstWatt SIT-3 topology.&nbsp;
+      Simulations of the SIT-3 topology showed a weird anti push-pull
+      behavior of the circuit which was strongly dependent on SIT/PFET
+      device parameters and source resistors.&nbsp; Since I had a very
+      limited selection of six 2SK182ES SIT devices available to select
+      from, I was seeking a way control the DEFiSIT parameters with
+      devices that could not work in the FirstWatt SIT-3 circuit.&nbsp;
+      Another goal was to eliminate the source resistors altogether and
+      obtain higher output power than that of the SIT-3.<br>
+    </p>
+    <p>During the simulation process, I discovered a circuit variant
+      which attenuates the signal to the PFET gate relative to that of
+      the SIT gate.&nbsp; <br>
+    </p>
+    <p><img
+src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/OS/OS-topology.jpg"
+        alt="" width="488" height="401"></p>
+    <p>Different attenuation factors <b>A</b> produce significant
+      changes to the circuit behavior:<br>
+    </p>
+    <blockquote>A &gt; A_J1ccs push/push (anti push/pull) behavior<br>
+      A = A_J1ccs&nbsp; SIT J1 acts as constant current source at low to
+      medium power levels<br>
+      A = A_ACbal&nbsp; J1 and M1 have balanced AC push/pull currents<br>
+      A = A_H2min&nbsp; 2nd harmonic minimized at 1W<br>
+      A = A_M1ccs&nbsp; PFET M1 acts as constant current source at low
+      to medium power levels<br>
+      A &lt; A_M1ccs&nbsp; pull/pull (anti push/pull) behavior</blockquote>
+    <p>The values for A_J1ccs, A_ACbal, A_H2min, and A_M1ccs depend on
+      the device and circuit parameters, but in bench testing of the
+      prototype SIT3X right channel I measured:<br>
+    </p>
+    <blockquote>
+      <p>A_J1ccs = 0.97959<br>
+        A_ACbal = did not measure<br>
+        A_H2min = 0.94851<br>
+        A_M1ccs = 0.92828<br>
+      </p>
+    </blockquote>
+    <h3>Second Harmonic Relative Phase:</h3>
+    Simulations (and subsequent bench tests) of the SIT3X output stage
+    also showed at second harmonic (H2) relative phase (as defined by
+    Nelson Pass) behaved was negative for A&gt;A_H2min and positive for
+    A &lt; A_H2min.&nbsp;&nbsp;&nbsp; Those simulations (and subsequent
+    bench tests) also showed better harmonic distortion behavior in the
+    A &lt; A_H2min.&nbsp;&nbsp; <br>
+    <br>
+    If we wish to have negative H2 phase and operate in the A &gt;
+    A_H2min we can use a (non-inverting) front end that is neutral with
+    respect to H2 phase and connect the speaker terminals
+    "normally".&nbsp;&nbsp; If we wish to have negative H2 phase and
+    operate in the A &lt; A_H2min range of values we can use a front end
+    that inverts the signal and connect the speaker wires
+    inverted.&nbsp; <br>
+    <br>
+    For the SIT3X prototype I chose to use an inverting front end and
+    operate in the A &lt; A_H2min range of values.&nbsp; <br>
+    <h2>Front End Stage:<br>
+    </h2>
+    <h3>Load on the Front End:</h3>
+    The resistor divider (potentiometer in the circuit shown above)
+    places a resistive load on the input (FEOut).&nbsp;&nbsp; Using
+    simulations I picked a value of between 500R and 1K for that
+    resistive load.&nbsp;&nbsp; Bench measurements show that the
+    2SK182ES has an input capacitance of approximately 19nF.&nbsp;&nbsp;
+    All of the resistive and capacitive loads combine to present a
+    significant load on the front end circuit. <br>
+    <h3>Front End Circuit Alternatives:</h3>
+    <h4>Buffer/Step-Up Transformer:</h4>
+    <p>The FirstWatt SIT-3 amplifier uses a JFET buffer to drive a
+      step-up transformer to provide current gain and voltage gain to
+      drive its SIT/PFET output stage.&nbsp;&nbsp;&nbsp; I abandoned
+      this approach because of the limited output voltage range of
+      quality audio transformers.&nbsp; Multiple stacked transformers
+      would be required for a front end circuit capable of more than
+      about 20V peak output, and the transformers introduce significant
+      distortion.<br>
+    </p>
+    <h4>Folded Cascode:</h4>
+    <p>Having studied the "John Curl's Blowtorch preamplifier" thread
+      years ago, I ran simulations of circuit variations that might be
+      useful for the SIT3X front end. &nbsp; One circuit from the
+      Blowtorch thread is: &nbsp; <a
+href="https://www.diyaudio.com/forums/solid-state/71189-john-curls-blowtorch-preamplifier-post893365.html">balanced
+
+
+        folded cascode circuit.</a>&nbsp;&nbsp; I found that the output
+      impedance of the circuit shown was too high to drive the input
+      load of the SIT3X OS, but by adding a MOSFET buffer to the circuit
+      it would work very well.&nbsp; The resulting circuit topology is:<br>
+    </p>
+    <img src="FCFE/FCFE-topology-crop.asc.jpg" alt="" width="601"
+      height="550"><br>
+    <br>
+    <h1>Design Implementations:</h1>
+    <h2><a href="OS/SIT3X-OS.html">Output Stage</a>:<br>
+    </h2>
+    <h2><a href="FCFE/FCFE.html">SIT3X Folded Cascode Front End:</a></h2>
+    <h2><a href="power-supply/Power-Supplies.html">Power Supplies:</a></h2>
+    <p><br>
+    </p>
+    <p> </p>
+    <p><br>
+    </p>
+  </body>
+</html>
