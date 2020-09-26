@@ -32,24 +32,46 @@
       </tbody>
     </table>
     <br>
+    <h3> OS Bill of Materials:&nbsp;&nbsp;&nbsp; <a
+        href="SIT3X-OS-20200912.BOM">SIT3X-OS-20200912.BOM</a></h3>
+    <h3> OS BOM saved from Mouser:&nbsp;&nbsp;&nbsp; <a
+        href="SIT3X-order2-OS_Sep13_1023AM.xls">SIT3X-order2-OS_Sep13_1023AM.xls</a></h3>
+    <h3>Parts choices:</h3>
+    &nbsp; In SIT3X-OS-20200912.BOM and you will find some parts that
+    have multiple choices.<br>
+    &nbsp; P6 can be a simple single-turn or multi-turn 100R trimmer in
+    the OS PCB<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or a 10-turn panel mounted precision
+    dial potentiometer.<br>
     <br>
+    &nbsp; C5 (output electrolytic) has multiple choices.<br>
+    &nbsp;&nbsp;&nbsp; The only constraints are voltage, diameter, and
+    lead spacing.<br>
     <br>
-    OS Bill of Materials:&nbsp;&nbsp;&nbsp; <a
-      href="SIT3X-OS-20200912.BOM">SIT3X-OS-20200912.BOM</a><br>
+    &nbsp; C6 has a variety of lead spacings on the PCB.&nbsp; The BOM
+    shows the capacitor that I used.<br>
     <br>
-    OS BOM saved from Mouser:&nbsp;&nbsp;&nbsp; <a
-      href="SIT3X-order2-OS_Sep13_1023AM.xls">SIT3X-order2-OS_Sep13_1023AM.xls</a><br>
+    &nbsp; M71 can be either an IRFP240 or and IRFP260.
+    <h3> Construction Details:</h3>
+    The 2SK182ES SIT must be insulated from the heatsink using sheet
+    mica and goop or anaother appropriate insulator.&nbsp; I used mica
+    and goop.&nbsp; The mounting screws must be insulated from the SIT
+    case.&nbsp; I used DigiKey RPC6397-ND shoulder washers, but there
+    might be better options.&nbsp; For the drain connection I used a
+    ring terminal for #16 or larger wires and a hole big enough that the
+    shoulder washer fits thru it and into the SIT mounting hole.&nbsp;
+    Thus the drain ring terminal contacts the case, but SIT case is
+    still insulated from the heatsink.<br>
     <br>
-    OS Parts Details:&nbsp;&nbsp;&nbsp; <a href="OS-build.txt">OS-build.txt</a>&nbsp;&nbsp;
-
+    The M71 cap. multiplier FET should not be mounted to the PCB until
+    the PCB is first attached to the heatsink.&nbsp; The image in
+    SIT3X-Build-Guide/OS/M71-lead-bending.jpg shows how the FET leads
+    should be bent.&nbsp; Attach the FET to the heatsink with a suitable
+    insulator (silpad or mica and goop) and screw, with the FET leads
+    inserted into the PS PCB thru holes, ans solder the leads.&nbsp; <br>
     <br>
+    <img src="M71-lead-bending.jpg" alt="" width="408" height="193"><br>
     <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-    <a href="M71-lead-bending.jpg">M71-lead-bending.jpg</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
-    <br>
-    space<br>
     <br>
     <p style="margin-top: 0.08in; margin-bottom: 0.08in"><font
         style="font-size: 12pt" size="3"><i><span style="display: none">

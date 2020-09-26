@@ -5,22 +5,87 @@
     <title>SIT3X Power Amplifier</title>
   </head>
   <body>
-    <h1 align="center">SIT3X Power Amplifier</h1>
     <br>
-    The SIT3X power amplifier is a common drain (aka. source-follower)
-    amplifier whose output stage (OS) consists of a Tokin 2SK182ES SIT
-    and an IXYS IXTN40P50P PFET.&nbsp; The SIT3X OS design was inspired
-    by the Nelson Pass FirstWatt SIT-3 amplifier and a variety of other
-    designs by Nelson Pass.&nbsp; The design is discussed in the
-    diyAudio Pass-Labs forum thread "The SIT3X Amplifier"&nbsp;
-    https://www.diyaudio.com/forums/pass-labs/353999-sit-3x-amplifier.html<br>
-    <h1><a href="prototype/prototype.html">SIT3X Prototype:</a></h1>
+    <div align="center"><a name="mozTocId44953" class="mozTocH1"></a><font
+        size="+3">SIT3X Power Amplifier<br>
+        <font size="+2">by Lynn H. Quam<br>
+          <br>
+        </font></font>
+      <div align="left">The SIT3X is a source-follower (aka.
+        common-drain) audio power amplifier whose output stage (OS)
+        consists of a Tokin 2SK182ES SIT and an IXYS IXTN40P50P
+        PFET.&nbsp; The SIT3X output stage (OS) design was inspired by
+        the Nelson Pass <a
+          href="http://www.firstwatt.com/pdf/prod_sit3_man.pdf">FirstWattt
+          SIT-3</a>&nbsp; amplifier and a variety of other designs by
+        Nelson Pass and is discussed in the diyAudio Pass-Labs forum
+        thread <a
+href="https://www.diyaudio.com/forums/pass-labs/353999-sit-3x-amplifier.html">The
+          SIT3X Amplifier.</a>&nbsp;&nbsp; Front end design was inspired
+        by John Curl's <a
+href="https://www.diyaudio.com/forums/solid-state/139220-blowtorch-parasound-upgrade.html?highlight=blowtorch">Blowtorch
+          Preamplifier.</a>&nbsp;&nbsp; The resulting SIT3X prototype
+        amplifier has the following properties:<br>
+        <ul>
+          <li>No global feedback around either the entire amplifier or
+            within front end stage.</li>
+          <li>Low distortion &nbsp; </li>
+          <ul>
+            <li>&lt; .03% THD at 1W </li>
+            <li>&lt; 1% THD at 50 Watts&nbsp; 8 Ohm</li>
+            <li>&lt; 1% THD at 100 Watts&nbsp; 4 Ohm</li>
+          </ul>
+          <li>Voltage gain 20dB<br>
+          </li>
+          <li>Output inverted relative to input<br>
+          </li>
+          <li>Output impedance approximately 0.15R =&gt; damping factor
+            of 50</li>
+          <li>Power consumption 360 Watts</li>
+          <li>Weight approximately 50 pounds</li>
+          <li>Dimensions 15"W x 11.5"H x 15"D<br>
+          </li>
+        </ul>
+        Index into this document:<br>
+      </div>
+    </div>
+    <ul id="mozToc">
+      <!--mozToc h1 1 h2 2 h3 3 h4 4 h5 5 h6 6-->
+      <li><a href="#mozTocId107362">Design History: </a>
+        <ul>
+          <li><a href="#mozTocId55839">Output Stage:</a>
+            <ul>
+              <li><a href="#mozTocId236461">The magic A attenuation
+                  factor: </a></li>
+              <li><a href="#mozTocId41483">Second Harmonic Relative
+                  Phase:</a></li>
+              <li><a href="#mozTocId131111">Load on the Front End:</a></li>
+            </ul>
+          </li>
+          <li><a href="#mozTocId516983">Front End Stage Circuit
+              Alternatives:</a>
+            <ul>
+              <li><a href="#mozTocId556366">Buffer/Step-Up Transformer:</a></li>
+              <li><a href="#mozTocId467921">Folded Cascode with Buffer:</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#mozTocId45702">SIT3X Prototype:</a></li>
+      <li><a href="#mozTocId422104">SIT3X Release:</a>
+        <ul>
+          <li><a href="#mozTocId888266">Output Stage: </a></li>
+          <li><a href="#mozTocId512469">SIT3X Folded Cascode Front End:</a></li>
+          <li><a href="#mozTocId524443">Power Supplies:</a></li>
+        </ul>
+      </li>
+    </ul>
     <img
 src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/prototype/images/DSC_0646-w1000.JPG"
       alt="" width="1000" height="664">
-    <h1>Design History:<br>
+    <h1><a name="mozTocId107362" class="mozTocH1"></a>Design History:<br>
     </h1>
-    <h2>Output Stage:</h2>
+    <h2><a name="mozTocId55839" class="mozTocH2"></a>Output Stage:</h2>
     <p>The SIT3X evolved from a discovery made during LTSpice
       simulations of variants of the FirstWatt SIT-3 topology.&nbsp;
       Simulations of the SIT-3 topology showed a weird anti push-pull
@@ -32,16 +97,20 @@ src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/prototype/
       Another goal was to eliminate the source resistors altogether and
       obtain higher output power than that of the SIT-3.<br>
     </p>
-    <p>During the simulation process, I discovered a circuit variant
-      which attenuates the signal to the PFET gate relative to that of
-      the SIT gate.&nbsp; <br>
-    </p>
     <p><img
 src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/OS/OS-topology.jpg"
         alt="" width="488" height="401"></p>
-    <p>Different attenuation factors <b>A</b> produce significant
-      changes to the circuit behavior:<br>
-    </p>
+    <h3><a name="mozTocId236461" class="mozTocH3"></a>The magic A
+      attenuation factor:<br>
+    </h3>
+    While simulating different output stage variations, I discovered a
+    topology which attenuates the AC signal to the PFET gate relative to
+    that of the SIT gate, and independently controls the Vgs bias
+    voltages of the FETs.&nbsp; This circuit allows the SIT operating
+    point Vds and Id to be chosen freely and different attenuation
+    factors <b>A</b> produce significant changes to the circuit
+    behavior.&nbsp; In retrospect, I should have named the attenuation
+    factor <b>X</b> for the X in SIT3<b>X</b>.&nbsp; <br>
     <blockquote>A &gt; A_J1ccs push/push (anti push/pull) behavior<br>
       A = A_J1ccs&nbsp; SIT J1 acts as constant current source at low to
       medium power levels<br>
@@ -61,36 +130,45 @@ src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/OS/OS-topo
         A_M1ccs = 0.92828<br>
       </p>
     </blockquote>
-    <h3>Second Harmonic Relative Phase:</h3>
+    <h3><a name="mozTocId41483" class="mozTocH3"></a>Second Harmonic
+      Relative Phase:</h3>
     Simulations (and subsequent bench tests) of the SIT3X output stage
     also showed at second harmonic (H2) relative phase (as defined by
     Nelson Pass) behaved was negative for A&gt;A_H2min and positive for
-    A &lt; A_H2min.&nbsp;&nbsp;&nbsp; Those simulations (and subsequent
-    bench tests) also showed better harmonic distortion behavior in the
-    A &lt; A_H2min.&nbsp;&nbsp; <br>
+    A &lt; A_H2min.&nbsp; <br>
     <br>
     If we wish to have negative H2 phase and operate in the A &gt;
     A_H2min we can use a (non-inverting) front end that is neutral with
     respect to H2 phase and connect the speaker terminals
-    "normally".&nbsp;&nbsp; If we wish to have negative H2 phase and
-    operate in the A &lt; A_H2min range of values we can use a front end
-    that inverts the signal and connect the speaker wires
-    inverted.&nbsp; <br>
+    "normally".&nbsp; <br>
     <br>
-    For the SIT3X prototype I chose to use an inverting front end and
-    operate in the A &lt; A_H2min range of values.&nbsp; <br>
-    <h2>Front End Stage:<br>
-    </h2>
-    <h3>Load on the Front End:</h3>
-    The resistor divider (potentiometer in the circuit shown above)
-    places a resistive load on the input (FEOut).&nbsp;&nbsp; Using
-    simulations I picked a value of between 500R and 1K for that
-    resistive load.&nbsp;&nbsp; Bench measurements show that the
-    2SK182ES has an input capacitance of approximately 19nF.&nbsp;&nbsp;
-    All of the resistive and capacitive loads combine to present a
-    significant load on the front end circuit. <br>
-    <h3>Front End Circuit Alternatives:</h3>
-    <h4>Buffer/Step-Up Transformer:</h4>
+    If we wish to have negative H2 phase and operate in the A &lt;
+    A_H2min range of values we can use a front end that inverts the
+    signal and connect the speaker wires inverted.&nbsp; <br>
+    <br>
+    Simulations (and subsequent bench tests) showed better harmonic
+    distortion behavior in the A &lt; A_H2min.&nbsp;&nbsp;
+    <h3><a name="mozTocId131111" class="mozTocH3"></a>Load on the Front
+      End:</h3>
+    <p>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      The resistor divider (potentiometer in the circuit shown above)
+      places a resistive load on the input (FEOut).&nbsp;&nbsp; Bench
+      measurements show that the 2SK182ES has an input capacitance of
+      approximately 19nF.&nbsp;&nbsp; All of the resistive and
+      capacitive loads combine to present a significant load on the
+      front end circuit.&nbsp; Using simulations I picked a value of
+      between 500R and 1K for the resistor divider (potentiometer in the
+      schematic).<br>
+    </p>
+    <h2><a name="mozTocId516983" class="mozTocH2"></a>Front End Stage
+      Circuit Alternatives:</h2>
+    <p>For the SIT3X prototype I chose to use an inverting front end and
+      operate in the A &lt; A_H2min range of values.&nbsp; <br>
+      <br>
+    </p>
+    <h3><a name="mozTocId556366" class="mozTocH4"></a>Buffer/Step-Up
+      Transformer:</h3>
     <p>The FirstWatt SIT-3 amplifier uses a JFET buffer to drive a
       step-up transformer to provide current gain and voltage gain to
       drive its SIT/PFET output stage.&nbsp;&nbsp;&nbsp; I abandoned
@@ -100,12 +178,14 @@ src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/OS/OS-topo
       about 20V peak output, and the transformers introduce significant
       distortion.<br>
     </p>
-    <h4>Folded Cascode:</h4>
+    <h3><a name="mozTocId467921" class="mozTocH4"></a>Folded Cascode
+      with Buffer:</h3>
     <p>Having studied the "John Curl's Blowtorch preamplifier" thread
       years ago, I ran simulations of circuit variations that might be
       useful for the SIT3X front end. &nbsp; One circuit from the
       Blowtorch thread is: &nbsp; <a
 href="https://www.diyaudio.com/forums/solid-state/71189-john-curls-blowtorch-preamplifier-post893365.html">balanced
+
 
 
         folded cascode circuit.</a>&nbsp;&nbsp; I found that the output
@@ -116,14 +196,23 @@ href="https://www.diyaudio.com/forums/solid-state/71189-john-curls-blowtorch-pre
     <img src="FCFE/FCFE-topology-crop.asc.jpg" alt="" width="601"
       height="550"><br>
     <br>
-    <h1>Design Implementations:</h1>
-    <h2><a href="OS/SIT3X-OS.html">Output Stage</a>:<br>
-    </h2>
-    <h2><a href="FCFE/FCFE.html">SIT3X Folded Cascode Front End:</a></h2>
-    <h2><a href="power-supply/Power-Supplies.html">Power Supplies:</a></h2>
-    <p><br>
-    </p>
-    <p> </p>
+    <h1><a name="mozTocId45702" class="mozTocH1"></a><a
+href="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/prototype/prototype.html">SIT3X
+        Prototype:</a></h1>
+    <h1><a name="mozTocId422104" class="mozTocH1"></a>SIT3X Release:<br>
+    </h1>
+    <blockquote>
+      <h2><a name="mozTocId888266" class="mozTocH2"></a><a
+          href="OS/SIT3X-OS.html">Output Stage</a>:<br>
+      </h2>
+      <h2><a name="mozTocId512469" class="mozTocH2"></a><a
+          href="FCFE/FCFE.html">Folded Cascode Front End:</a></h2>
+      <h2><a name="mozTocId524443" class="mozTocH2"></a><a
+          href="power-supply/Power-Supplies.html">Power Supplies:</a></h2>
+      <p><br>
+      </p>
+      <p> </p>
+    </blockquote>
     <p><br>
     </p>
   </body>
