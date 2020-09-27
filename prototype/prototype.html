@@ -5,7 +5,21 @@
     <title>SIT3X-prototype</title>
   </head>
   <body>
-    <h1>SIT3X Prototype</h1>
+    <h1><a name="mozTocId517309" class="mozTocH1"></a>SIT3X Prototype</h1>
+    <ol id="mozToc">
+      <!--mozToc h1 1 h2 2 h3 3 h4 4 h5 5 h6 6-->
+      <li><a href="#mozTocId517309">SIT3X Prototype</a>
+        <ol>
+          <li><a href="#mozTocId686739">PCBs:</a></li>
+          <li><a href="#mozTocId787397">Chassis: </a></li>
+          <li><a href="#mozTocId873114">Power Supply:</a></li>
+          <li><a href="#mozTocId684789">Grounding:
+            </a></li>
+        </ol>
+      </li>
+    </ol>
+    <p><br>
+    </p>
     <table width="1340" height="1330" cellspacing="5" cellpadding="5"
       border="0">
       <tbody>
@@ -30,7 +44,7 @@
         </tr>
       </tbody>
     </table>
-    <h3>PCBs:</h3>
+    <h2><a name="mozTocId686739" class="mozTocH3"></a>PCBs:</h2>
     <p>The SIT3X prototype was built using PCBs from a small fabrication
       run of the OS and FCFE PC boards, and some left over power supply
       boards from a previous amplifier project.&nbsp;&nbsp; During bench
@@ -42,19 +56,7 @@
       documentation.&nbsp; The release versions of the OS and FCFE PCBs
       have been tested in the prototype chassis.<br>
     </p>
-    <h3>Power Supply:</h3>
-    <p>I used an Antek AN-10435 1000VA transformer having two 35Vrms
-      secondaries.&nbsp; I deliberately chose an oversized transformer
-      to allow experimentation with bother higher than necessary rail
-      voltages and higher bias currents.&nbsp;&nbsp; An 800VA
-      transformer with 34Vrms secondaries would be more than adequate,
-      but I would not recommend going much below 600VA and 32Vrms.&nbsp;
-      <a href="prototype-PS.jpg">Prototype Power Supply Schematic</a><a
-        href="prototype-PS.jpg"><img src="prototype-PS.jpg" alt=""
-          width="1398" height="719" border="0"></a><a
-        href="prototype-PS.jpg">Power Supply Schematic:</a><br>
-    </p>
-    <h3>Chassis:</h3>
+    <h2><a name="mozTocId787397" class="mozTocH3"></a>Chassis: </h2>
     <p>The SIT3X prototype uses the same simple chassis construction
       that I have used for most of my other amplifiers.&nbsp; It
       consists of two HeatsinkUSA heatsinks mounted fin-to-fin,
@@ -84,6 +86,71 @@
     <p><a href="Prototype-Chassis-Details.html">Chassis Construction
         Details</a><br>
     </p>
+    <h2><a name="mozTocId873114" class="mozTocH3"></a>Power Supply:</h2>
+    <p>I used an Antek AN-10435 1000VA transformer having two 35Vrms
+      secondaries.&nbsp; I deliberately chose an oversized transformer
+      to allow experimentation with bother higher than necessary rail
+      voltages and higher bias currents.&nbsp;&nbsp; An 800VA
+      transformer with 34Vrms secondaries would be more than adequate,
+      but I would not recommend going much below 600VA and 32Vrms.&nbsp;
+      <br>
+    </p>
+    <img
+src="file:///home/quam/SIT-3/order2/build-guide/SIT3X-Power-Amplifier/prototype/prototype-PS.jpg"
+      alt="" width="1349" height="700"><br>
     <br>
+    <h2>Measurements:</h2>
+    <h3><a name="mozTocId684789" class="mozTocH3"></a>Output Noise
+      Level:<br>
+    </h3>
+    <p> I performed spectrum analyzer measurements and multimeter AC
+      voltage measurements of the SIT3X output with RCA inputs shorted,
+      and found that the noise levels depended on a variety of factors,
+      the primary ones being the wiring of the rectifier/capacitor
+      output grounds to the OS PCBs and the proximity of the rectifiers
+      to the FCFE PCBs.&nbsp;&nbsp; The prototype chassis wiring diagram
+      show the wiring configuration that produced the lowest noise
+      levels after much experimentation.&nbsp; There remains an
+      unexplained difference in noise levels between the channels, as
+      shown in the table below.&nbsp;&nbsp;&nbsp; These noise levels are
+      low enough that I must have my ear next to my 85dB sensitivity
+      loudspeaker cones to hear it.&nbsp; <br>
+    </p>
+    <table width="589" height="85" cellspacing="2" cellpadding="2"
+      border="0">
+      <tbody>
+        <tr>
+          <td valign="top">Condition<br>
+          </td>
+          <td valign="top">Left<br>
+          </td>
+          <td valign="top">Right<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">inputs shorted, input grounds independent<br>
+          </td>
+          <td valign="top">0.2mV<br>
+          </td>
+          <td valign="top">0.9mV<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">inputs shorted, input grounds connected<br>
+          </td>
+          <td valign="top">0.5mV<br>
+          </td>
+          <td valign="top">1.1mV<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>For new SIT3X builds using the prototype chassis design with the
+      new single-channel capacitor boards I recommend the following
+      wiring diagram.&nbsp; It is important that the wires from the star
+      ground to the OS PCB grounds avoid influence from the transformer
+      magnetic fields as much as possible.<br>
+    </p>
+    <img src="prototype-PS-caps1.jpg" alt="" width="1359" height="875"><br>
   </body>
 </html>
