@@ -73,7 +73,8 @@ M1     IXTN40P50P IXYS PFET 747-IXTN40P50P
        
 J1     2SK182ES  
        mica sheet+goop or silpad under 2SK182ES 
-       DigiKey RPC6397-ND shoulder washers to insulate mounting screws.
+       DigiKey RPC6397-ND or Mouser 144-MNI-8-8 shoulder washer.
+       Mouser 144-MNI-6-6 shoulder washer thru 644-E18-8RB-Q ring terminal.
 
        517-2314-6121TG 14 pin breakaway header
        2 x 571-796740-2 2-pin 6.36mm spacing terminal block
