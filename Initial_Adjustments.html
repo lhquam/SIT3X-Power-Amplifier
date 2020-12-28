@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Initial Adjustments</title>
+  </head>
+  <body>
+    <h2>Initial Adjustments:</h2>
+    <p>For initial adjustments I recommend the following:<br>
+    </p>
+    <ul>
+      <li>Disconnect ribbon cable between the OS and FCFE PCBs.</li>
+      <li>If possible,&nbsp; connect power to the amplifier through a
+        Variac.&nbsp; <br>
+      </li>
+    </ul>
+    <p></p>
+    <h3>Output Stage Adjustment:</h3>
+    <ul>
+      <li>Trimmer P4 adjusts Vds, the voltage between drain and source,
+        of the 2SK182ES SIT.&nbsp;&nbsp;&nbsp; What is particularly
+        important the the voltage between node S, the SIT source pin,
+        and ground be within the voltage range of the output
+        electrolytic capacitor C5.&nbsp;&nbsp; There are two alternative
+        power configurations: <br>
+      </li>
+      <ul>
+        <li>positive and negative rails: The voltage at Node S should be
+          negative at around -2V to -5V.</li>
+        <li>ground and negative rails: The voltage at Node S should be
+          negative at around 1/2 the voltage of the negative rail.</li>
+      </ul>
+      <li>Trimmer P5 adjusts the OS idle current, which is determined by
+        the voltage across the IXTN40PN50P PFET drain sense resistor(s)
+        R22.&nbsp;&nbsp;&nbsp; For idle current Ibias, the voltage
+        across R22 should be V(R22) = 0.097*Ibias.&nbsp; In the
+        prototype SIT3X, I have adjusted for V(R22)=180mV, thus Ibias=
+        1.856A.&nbsp;&nbsp; DiyAudio Store 5U 400mm chassis, the maximul
+        value for Ibias is estimated to be about 1.6A or V(R22)=0.155V.<br>
+      </li>
+    </ul>
+    <p>Start with the P4 and P5 CCW, assuming the trimmers are correctly
+      oriented.&nbsp; P5 center tap to the Opto LED anode resistance
+      should be near zero.&nbsp; P4 center tap to top of R24 should be
+      near zero.</p>
+    <p>Two voltage measurements must be monitored while adjusting P4 and
+      P5, and is best done using two multimeters.&nbsp;&nbsp; Connect
+      one multimeter between V(S) the DC voltage between the SIT source
+      pin, and ground.&nbsp; Connect the other multimeter across
+      R22.&nbsp; These adjustments strongly interact with a fairly long
+      time constant.&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <ol>
+      <li>Apply power through the Variac initially at a low voltage and
+        increase while monitoring the two voltage measurements.&nbsp;
+        The main thing to look for is that the idle current is nearly
+        zero with P4 in the CCW position (or the CW position if the
+        trimmer is backwards).&nbsp;&nbsp; The voltage at node S should
+        be near zero.&nbsp;&nbsp; If these voltages look good, slowly
+        increase the Variac output voltage until the nominal line
+        voltage is reached.&nbsp;&nbsp;&nbsp; <br>
+      </li>
+      <li>With the amplifier powered at normal AC line voltage,
+        alternately turn P4 and P5 in the CW direction with the goal
+        being to achieve V(S) = -2V to -5V, and V(R22)=0.097*Ibias.<br>
+      </li>
+    </ol>
+    <h3>Folded Cascode Front End Adjustment:</h3>
+    <p>The FCFE has two trimmers P3FE and P4FE which adjust the currents
+      through the resistors R31 and R32, which ultimately adjust the
+      FCFE M1FE and M2FE FET idle currents.&nbsp;&nbsp;&nbsp; Those
+      currents are determined by measuring the voltages across the 22
+      Ohm resistors R10 and R11, <b>which should be installed in a
+        manner that permits the attachment of multimeter probes.&nbsp; </b>The
+
+      idle current of M1FE is V(R10)/22R.&nbsp; In the SIT3X prototype,
+      I chose a idle current of 50mA, but it can be somewhat lower. At
+      50mA, V(R10)=1.1V.<br>
+    </p>
+    <p>With the power off, connect the ribbon cable between the OS and
+      FCFE PCBs.&nbsp; State with P3FE and P4FE in the fully CCW where
+      the resistance of the wiper to the end of R35b/R36b is near zero
+      Ohms.&nbsp;&nbsp; <br>
+    </p>
+    <p>Connect one multimeter across R10 or R11, and connect the other
+      multimeter between FEOut and ground.&nbsp; The adjustment goal to
+      achieve near zero volts at FEOut and a value near 1.1V across
+      R(10).&nbsp; <br>
+    </p>
+    <ol>
+      <li>Apply power to the amplifier.</li>
+      <li>Alternately adjust P3FE and P4FE.&nbsp; The adjustment goal to
+        achieve near zero volts at FEOut and a value near 1.1V across
+        R(10).&nbsp; This is an iterative process since these
+        adjustments strongly interact.<br>
+      </li>
+    </ol>
+    <h3>X Pot Initial Adjustment:</h3>
+    The X pot, P6 on the OS PCB, adjusts AC signal level to the PFET
+    relative to that of the SIT, and has a major effect on the behavior
+    of the output stage.&nbsp; For a variety of reasons I have chosen a
+    particular adjustment of P6 that both sounds good to me and is
+    easily achieved without needing a spectrum analyzer or other special
+    equipment.&nbsp;&nbsp;&nbsp; This is the value where at low output
+    wattage the PFET is acting as a current source and the SIT is doing
+    all of the real work, as in a single-ended output stage.<br>
+    <ol>
+      <li>Connect an 8 Ohm load of at least 3 Watts to the the amplifier
+        output.</li>
+      <li>Apply a 1kHz (the frequency can be as low of 60Hz) sine wave
+        signal of around 0.7Vpeak (0.5Vrms) to the amplifier input.</li>
+      <li>Connect a AC voltmeter to across the R22, the PFET drain sense
+        resistor.<br>
+      </li>
+      <li>Apply power to the amplifier.</li>
+      <li>Adjust P6 for as close to zero Vac as possible.&nbsp; The
+        value should be less than 1mVrms.</li>
+    </ol>
+  </body>
+</html>

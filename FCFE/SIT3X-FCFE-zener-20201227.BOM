@@ -1,0 +1,63 @@
+SIT3X  Folded Cascode Front End BOM modified for zeners rather than TL431
+
+J1     LSK170 grade B  Idss 7ma-8ma
+J2     LSJ74  grade B  Idss 7ma-8ma
+M1     2SK2013   Vgs matching not required
+M2     2SJ313     
+q1     KSC3503DS 512-KSC3503DS   BJT NPN 
+q2     KSA1381   512-KSA1381     BJT PNP 
+q3     KSA1381   512-KSA1381     BJT PNP 
+q4     KSC3503DS 512-KSC3503DS   BJT NPN 
+
+all resistors are 1/4W metal film resistors unless otherwise indicated.
+
+r1     4750   603-MFR-25FBF52-4K75     
+r10    22     603-MFR-25FBF52-22R   
+r11    22     603-MFR-25FBF52-22R  
+r2     47000  603-MFR-25FTE52-47K
+r3     4750   603-MFR-25FBF52-4K75               FIXME: schematic says 4.7k
+r4     470    603-MFR-25FTE52-470R    
+r5     4750   603-MFR-25FBF52-4K75    
+r6     4750   603-MFR-25FBF52-4K75    
+r7     4750   603-MFR-25FBF52-4K75    
+r8     470    603-MFR-25FTE52-470R   
+r9     470    603-MFR-25FTE52-470R
+r31    240    603-MFR-25FTE52-240R    
+r32    240    603-MFR-25FTE52-240R 
+rgs1   470    603-MFR-25FTE52-470R
+rgs2   470    603-MFR-25FTE52-470R
+
+componenents changed for zener version:
+2x 6.8V 1/2W zener 521-1N5235BTR
+r35b  4.7k   603-MFR-25FBF52-4K7                  FIXME: schematic says 2.7k
+r35   2.2k   603-MFR-25FTE52-2K2
+r36    4.7k   603-MFR-25FBF52-4K7                 FIXME: schematic says 2.7k
+r36b   2.2k   603-MFR-25FTE52-2K2
+r37a	10k   603-MFR50SFTE52-10K  1/2W
+r37b	10k   603-MFR50SFTE52-10K  1/2W
+C11    150uF 10V 667-EEU-FR1A151b  LS=5mm
+C12    150uF 10V 667-EEU-FR1A151   LS=2mm
+
+Components not marked on PCB (but shown in FCFE PCB layout image)
+
+3296W-1-202LF
+P3FE and P4FE pots were out of stock 20200913 at Mouser but available at Digikey
+P3FE  652-3296W-1-502LF 5k trimmer (changed to multi-turn - imperfect since pin-2 isn't at thru-hole)
+P4FE  652-3296W-1-502LF 5k trimmer (changed to multi-turn - imperfect since pin-2 isn't at thru-hole)
+PJS: can be eliminated by shorting all 3 pins.
+PJS   20R 3386P-1-200TLF  short pins as shown in schematic
+
+Rfepwr1 10R 1/2W 660-MF1/2LCT528R100J 
+Rfepwr2 10R 1/2W 660-MF1/2LCT528R100J 
+Cfepwr1 667-EEU-FS1H122B  1.2mF 50V electrolytic LS=7.5mm D=16mm L=25mm 
+Cfepwr2 667-EEU-FS1H122B  1.2mF 50V electrolytic LS=7.5mm D=16mm L=25mm 
+
+2 x 532-551002B00G Aavid heatsinks
+
+Connectors:
+14-pin 517-2314-6121TG 2-row header   3M
+3-pin  651-1985836   terminal block 0.15" spacing Phoenix Contact 
+
+The following were provided for standalone FCFE bench testing.
+  Unused:  Unlabelled 2-pin connector near ribbon cable connector:
+  Shunt: wire across thru holes.  (This was provided for standalone FCFE bench testing).
